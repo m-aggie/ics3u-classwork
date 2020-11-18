@@ -1,0 +1,32 @@
+Exercise 1
+  print("Maggie Xie")
+  print("123 SpringCreek")
+  print("Richmond Hill, ON")
+  print("L4B 6H8")
+
+Exercise 2
+  name = input("Enter name: ")
+  print(f"Hello {name}")
+
+Exercise 3
+  length = float(input("Enter length of the room: "))
+  width = float(input("Enter width of the room: "))
+  area = length*width
+  print(f"The area of the room is {area}m")
+  
+Exercise 4
+  length = float(input("Enter length of field: "))
+  width = float(input("Enter width of the field: "))
+  area_ft = length*width
+  area_acres = area_ft/43560
+  print(f"The area of your field is {area_acres} acres")
+
+Exercise 5
+  num_small = float(input("Enter number of bottles less than 1L: "))
+  num_large = float(input("Enter number of bottles over 1L: "))
+
+  x = num_small*0.10
+  y = num_large*0.25
+  sum = x+y
+
+  print(f"Total amount of reduction ${sum}")

@@ -1,0 +1,48 @@
+//Getting food from a vending machine 
+From a machine's perspective
+  - receive money
+  - receive the code for which shack the customer wants
+  - See if the money is the right amount
+  - if so, drop the bag and give back change if there is any
+
+Basic programming concepts
+  - 
+
+//The cookie too big for the glass
+How to fix the problem
+  - take the cookie out of the glass
+  - break the cookie in half so it can fit into the glass
+
+How to prevent the problem
+  - make sure the mouth of the glass is bigger than the cookie
+  
+How can this problem be solved with an app
+  - the app can scan the diameter of the cookie and the diameter of the mouth of the glass
+  - compare to see which diameter is larger, the cookie or the mouth of the glass
+  - if the mouth of the glass is bigger, the app says the cookie can fit
+  - if the cookie is bigger, the app says find a bigger glass or break the cookie 
+
+//The spoon dropped into the gravy
+How to fix this problem
+  - get the spoon from inside the gravy
+
+How to prevent this problem
+  - make sure the spoon is long enough not fall into the bowl
+  - take the spoon out when you are done using it
+
+How can this problem be solved with a robotic system
+  - the robotic system can have a camera that sees when your hand lets go of the spoon
+  - it will then make a sound to remind you to take the spoon out of the bowl
+
+//People who can't park
+How to fix this problem
+  - back out and try again
+
+How to prevent this problem
+  - have a camera outside of your car to show you where the lines on the ground are
+
+How can this problem be solved with a robotic and/or software solution
+  - a sofware that can tell you which which way you should steer the car to park properly
+  - the car can park itself through the robotic system
+
+  

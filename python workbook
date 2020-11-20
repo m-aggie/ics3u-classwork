@@ -30,3 +30,46 @@ Exercise 5
   sum = x+y
 
   print(f"Total amount of reduction ${sum}")
+
+Exercise 6
+  cost = float(input("Enter cost of the meal: "))
+  tax = round(cost*0.13,2)
+  tip = round(cost*0.18,2)
+  total = round(cost + tax + tip,2)
+  print(f"Cost: ${cost}")
+  print(f"Tax: ${tax}")
+  print(f"Tip: ${tip}")
+  print(f"Total: ${total}")
+
+Exercise 7
+  n = int(input("Enter a number: "))
+  sum = n*(n+1)/2
+  print(sum)
+
+Exercise 8
+  gizmos = int(input("How many gizmos? "))
+  widgets = int(input("How many widgets? "))
+  weight = (gizmos*112) + (widgets*75)
+  print(f"No. of gizmos: {gizmos}")
+  print(f"No. of widgets: {widgets}")
+  print(f"Total weight: {weight} grams")
+  
+Exercise 9
+  amount = float(input("Enter the amount: "))
+  year_1 = round(amount*1.04,2)
+  year_2 = round(year_1*1.04,2)
+  year_3 = round(year_2*1.04,2)
+  print(f"Original amount: ${amount}")
+  print(f"After Year 1: ${year_1}")
+  print(f"After Year 2: ${year_2}")
+  print(f"After Year 3: ${year_3}")
+
+Exercise 10
+  a = float(input("Enter a number: "))
+  b = float(input("Enter a number: "))
+  total = a+b
+  difference = b-a
+  product = a*b
+  print(f"{a} + {b} = {total}")
+  print(f"{b} - {a} = {difference}")
+  print(f"{a} x {b} = {product}")

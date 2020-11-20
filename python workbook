@@ -1,3 +1,5 @@
+Part 1
+------
 Exercise 1
   print("Maggie Xie")
   print("123 SpringCreek")
@@ -70,6 +72,16 @@ Exercise 10
   total = a+b
   difference = b-a
   product = a*b
+  quotient = b/a
+  remainder = b%a
+  exponent = a**b
   print(f"{a} + {b} = {total}")
   print(f"{b} - {a} = {difference}")
   print(f"{a} x {b} = {product}")
+  print(f"{b}/{a} = {quotient}")
+  print(f"Remainder is {remainder}")
+  print(f"{a}^{b} = {exponent}")
+  
+Part 2
+------
+

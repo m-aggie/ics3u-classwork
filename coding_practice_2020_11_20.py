@@ -14,3 +14,10 @@ width = float(input("Enter the width: "))
 length = float(input("Enter the length: "))
 volume = height*width*length
 print(f"The volume is {volume}m3")
+
+#4
+user = str(input("Did you join the Google Meet and mute the teacher? "))
+if user == "yes":
+  print("That is probably not a good idea")
+else: 
+  print("Ok good")

@@ -82,6 +82,3 @@ Exercise 10
   print(f"Remainder is {remainder}")
   print(f"{a}^{b} = {exponent}")
   
-Part 2
-------
-

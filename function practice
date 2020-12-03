@@ -1,0 +1,118 @@
+https://mrgallo.github.io/python-exercises/exercises/fundamentals/functions/index.html
+
+
+Question 1
+def order_66():
+  print("Executing Order 66:")
+  print()
+  print("Telling clones to attack the Jedi...")
+  print("Assuming they will listen...")
+  print("(apparently they had some bio-chip installed)")
+  print("Most of the Jedi have been eliminated.")
+  print("... except those Jedi that would provide convenient successive expanded-universe story-lines.")
+
+order_66()
+
+
+Question 2
+def hello_goodbye():
+    print("Hello,")
+    print("goodbye.")
+
+hello_goodbye()
+hello_goodbye()
+hello_goodbye()
+hello_goodbye()
+
+
+Question 3
+def give_argument(argument: str) -> None:
+  print("The defense will commence with their opening arguments:")
+  print(f"Your Honour, {argument}.")
+
+give_argument("my client is innocent")
+
+
+Question 4
+def get_friend_to_do_your_homework(subject: str, chapter: str) -> None:
+    print(f"Ok, I'll complete the {chapter} chapter of your {subject} work.")
+
+get_friend_to_do_your_homework("math", "7th")
+
+
+?? Question 5
+
+
+Question 6
+def print_banner():
+  print("  _    _      _ _         __          __        _     _  _ ")
+  print(" | |  | |    | | |        \ \        / /       | |   | || |")
+  print(" | |__| | ___| | | ___     \ \  /\  / /__  _ __| | __| || |")
+  print(" |  __  |/ _ \ | |/ _ \     \ \/  \/ / _ \| '__| |/ _` || |")
+  print(" | |  | |  __/ | | (_) |     \  /\  / (_) | |  | | (_| || |")
+  print(" |_|  |_|\___|_|_|\___( )     \/  \/ \___/|_|  |_|\__,_|(_)")
+  print("                      |/                                   ")
+
+print_banner()
+
+
+Question 7
+def calc_average (numbers):
+  return sum(numbers) / len(numbers)
+  
+
+Question 8
+def building_a():
+  print("-----------")
+  print("**********|")
+  print("**********|")
+  print("-----------")
+def building_c():
+  print("--------")
+  print("' '' ''|")
+  print("--------")
+def building_b():
+  print("###############")
+  print("###############")
+
+building_a()
+building_c()
+building_b()
+building_a()
+building_c()
+building_c()
+
+
+Question 9
+def the_number_two():
+  return 2
+def the_number_three():
+  return 3
+the_sum = the_number_two() + the_number_three()
+the_product = the_number_two() * the_number_three()
+
+print(the_sum) 
+print(the_product)
+
+
+Question 10
+def mystery_number_a():
+  return 8
+def mystery_number_b():
+  return 2
+sixteen = mystery_number_a() + mystery_number_a()  
+sixteen_again = mystery_number_a() * mystery_number_b()  
+
+print(sixteen)
+print(sixteen_again)  
+
+
+?? Question 11
+
+
+?? Question 12
+def string_times(string:str, n:int) -> str:
+  new_string = ""
+  for i in range(n):
+    new_string += string
+    return new_string

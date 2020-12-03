@@ -1,0 +1,52 @@
+#1
+def add_three_num(a:int, b:int, c:int):
+  return a + b + c
+
+total = add_three_num(4,12,17)
+print(total)
+
+
+#2
+def name_and_age(name:str, age:int):
+  print(f"{name} is {age} years old")
+
+me = name_and_age("Maggie", 16)
+print(me)
+
+
+#3
+def average(a:int, b:int):
+  return (a+b)/2
+
+mark = average(85, 99)
+print(mark)
+
+
+#4
+def largest_num(a:int, b:int, c:int):
+  if a > b and b > c:
+    return a
+  elif b > c and c > a:
+    return b
+  elif c > a and a > b:
+    return c
+  elif a > c and c > b:
+    return a
+  elif b > a and a > c:
+    return b
+  elif c > b and b > a:
+    return c
+
+my_nums = largest_num(4, 4, 7)
+print(my_nums)
+
+
+#5
+def first_two(string):
+  if len(string) <= 2:
+    return string
+  else:
+    return string[0:2]
+
+word = first_two("hello")
+print(word)

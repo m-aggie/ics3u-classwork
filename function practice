@@ -111,7 +111,20 @@ print(sixteen)
 print(sixteen_again)  
 
 
-?? Question 11
+Question 11
+def side_length_from_perimeter(perimeter: float) -> float:
+    """Get the side length of a square by its perimeter.
+    
+    Args:
+        perimeter (float): The perimiter of the square.
+    
+    Returns:
+        The side length of the square.
+    """
+    return perimeter / 4
+
+length = side_length_from_perimeter(12)
+print(length) 
 
 
 Question 12

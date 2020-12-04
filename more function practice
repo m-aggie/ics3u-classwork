@@ -24,17 +24,11 @@ print(mark)
 
 #4
 def largest_num(a:int, b:int, c:int):
-  if a > b and b > c:
+  if a >= b and a >= c:
     return a
-  elif b > c and c > a:
+  elif b >= a and b >= c:
     return b
-  elif c > a and a > b:
-    return c
-  elif a > c and c > b:
-    return a
-  elif b > a and a > c:
-    return b
-  elif c > b and b > a:
+  elif c >= a and c >= b:
     return c
 
 my_nums = largest_num(4, 4, 7)

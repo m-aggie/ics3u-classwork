@@ -4,6 +4,7 @@ from typing import List
 
 from words import WORD_LIST
 
+
 def main():
     ATTEMPTS_ALLOWED = 6
 
@@ -17,7 +18,9 @@ def main():
     while result is None:
 
         # display lives left
-        print_lives_left(lives, ATTEMPTS_ALLOWED)
+        print_lives_left = (lives, ATTEMPTS_ALLOWED)
+        print(print_lives_left)
+        print()
 
         # display hidden word
         blanked_word = reveal_letters(secret_word, correct_guesses)
@@ -45,8 +48,7 @@ def main():
     print(outcome_message(result))
 
 
-#Alysia, Ian, Dongwon (Chris), Ethan
-def get_random_word(word_list: list) -> str:
+def get_random_word(word_list: List[str]) -> str:
     """Gets a random word.
     
     Args: 
@@ -58,18 +60,7 @@ def get_random_word(word_list: list) -> str:
     return random.choice(word_list)
 
 
-def print_lives_left(remaining: int, out_of: int):
-    """Prints out lives-left info.
-    
-    Args:
-        remaining: Remaining lives left.
-        out_of: How many lives in total you start with.
-    """
-    pass
-
-
-# Group 4 (Shawn, Guolin, Alyssa, Alan, Kevin Yu)
-def reveal_letters(word: str, visible_letters) -> str:
+def reveal_letters(word: str, visible_letters: List[str]) -> str:
     """Reveal the given letters in a hidden word.
     
     Args:
@@ -84,30 +75,10 @@ def reveal_letters(word: str, visible_letters) -> str:
         The resulting string would be "_ e _ _ o". Separate each character
         with a space to make it easier to read.
     """
-    hidden_word = ""
-    for letter in word:
-        if letter in visible_letters:
-            hidden_word += letter
-        else:
-            hidden_word += "_"
-        hidden_word += " "
-    return hidden_word.strip()
-
-
-# Alysia, Dongwon, Ethan and Ian
-def word_reveal_message(word: str) -> str:
-    """Creates a message revealing the secret word.
-    
-    Args:
-        word: the word being revealed.
-    
-    Returns:
-        A message revealing the secret word.
-    
-    Example: 
-        "The secret word was 'orange'."
-    """
-    return f"The secret word was '{word}'."
+    if visible_letters in word:
+      return visible_letters
+    else:
+      return "_ "
 
 
 def calc_attempts_remaining(attempts_allowed: int, incorrect: List[str]) -> int:
@@ -123,8 +94,38 @@ def calc_attempts_remaining(attempts_allowed: int, incorrect: List[str]) -> int:
     Returns:
         How many remaining guesses the player has.
     """
-    remaining_attempts = attempts_allowed - len(incorrect)
-    return remaining_attempts
+    attempts_left = attempts_allowed - len(incorrect)
+    return attempts_left
+
+
+def word_reveal_message(word: str) -> str:
+    """Creates a message revealing the secret word.
+    
+    Args:
+        word: the word being revealed.
+    
+    Returns:
+        A message revealing the secret word.
+    
+    Example: 
+        "The secret word was 'orange'."
+    """
+    return f"The word was {word}."
+
+
+def outcome_message(result: str) -> str:
+    """Creates a message based on the player's outcome.
+    
+    Args:
+        result: Either 'win' or 'lose'.
+    
+    Returns:
+        An appropriate message based on the player's outcome.
+    """
+    if result == "win":
+      return "You win!"
+    else:
+      return "You lost :("
 
 
 def get_guess(all_guesses: List[str]) -> str:
@@ -141,10 +142,20 @@ def get_guess(all_guesses: List[str]) -> str:
     Returns:
         A single letter, not already guessed.
     """
-    pass
+    valid = False
+    while valid == False:
+      guess = input("Enter your guess: ")
+      if len(guess) >= "2":
+        valid = False
+      elif not guess.isalpha():
+        valid = False
+      elif guess in all_guesses:
+        valid = False
+      else:
+        valid = True
+    return guess
 
 
-#Abisha, Nolan, Harjap, Gwan Woo
 def letter_is_in_word(letter: str, word: str) -> bool:
     """Determines if a given letter is in a word.
     
@@ -155,31 +166,30 @@ def letter_is_in_word(letter: str, word: str) -> bool:
     Returns:
         True if the letter is in the word, False otherwise.
     """
-    return letter in word
+    if letter in word:
+      return True
+    else:
+      return False
 
 
 def all_letters_present_in_list(word: str, letter_list: List[str]) -> bool:
-    for i in range(len(word)):
-        if word[i] not in letter_list:
-            return False
-    return True
-  
-
-#Alysia, Ian, Dongwon (Chris), Ethan
-def outcome_message(result: str) -> str:
-    """Creates a message based on the player's outcome.
+    """Determines if all a word's letters are in a given list.
     
+    For every letter in the given word, is it present in the
+    given list of letters? True if so.
+
     Args:
-        result: Either 'win' or 'lose'.
+        word: The word to check.
+        letter_list: The letters of the word
     
     Returns:
-        An appropriate message based on the player's outcome.
+        True if all the letters in the word are in the list of letters.
     """
-
-    if result == "win":
-        return "You have won."
-    else:
-        return "You have lost."
+    for char in letter_list:
+      if word not in letter_list:
+        return False
+      else:
+        return True
 
 
 if __name__ == "__main__":

@@ -1,0 +1,49 @@
+https://gist.github.com/MrGallo/eddeaf17dff3bbd72c9a5ef6c4d29584
+
+Input and calculations
+  length = int(input("Enter the length of the shape: "))
+  width = int(input("Enter the width of the shape: "))
+  area = length * width
+  perimeter = (length + width)*2
+  print(f"The perimeter of your shape is {perimeter} cm and the area is {area} cm^2")
+  
+If, elif, else
+  percentage = int(input("Enter your percentage: "))
+  if percentage >= 80:
+    print("Level 4")
+  elif percentage >= 70:
+    print("Level 3")
+  elif percentage >= 60:
+    print("Level 2")
+  elif percentage >= 50:
+    print("Level 1")
+  else:
+    print("R")
+    
+String slicing
+  data = "name:      John, ecl:#234438, yob:1956"
+  name = data[5:15].strip()
+  yob = int(data[34:38])
+  age = 2020 - yob
+  print(name)
+  print(yob)
+  print(age)
+  
+Looping
+  string = "Hello Maggie!"
+  i = 0
+  count = 0
+  while i < (len(string)-1):
+    c = string[i].lower()
+    if c == "a" or c == "e" or c == "i" or c == "o" or c == "u":
+      count += 1
+    i += 1
+  print(count)
+  
+Function definition
+  def say_hello():
+    return "hello"
+    
+Function parameters
+  def subtract (a:int, b:int) -> int:
+    return a -  b

@@ -1,0 +1,85 @@
+lists - 1
+
+#1
+def first_last_6(nums: List[int]) -> bool:
+ if nums[0] == 6 or nums[-1] == 6:
+      return True
+ else:
+      return False
+
+#2
+def same_first_last(nums: List[int]) -> bool:
+  if len(nums) == 0:
+    return False
+  if nums[0] == nums[-1]:
+    return True
+  else:
+    return False
+
+#3
+def common_end(a: List[int], b: List[int]) -> bool:
+    if a[0] == b[0]:
+      return True
+    elif a[-1] == b[-1]:
+      return True
+    else:
+      return False
+
+#4
+def sum_3(nums: List[int]) -> int:
+  return nums[0] + nums[1] + nums[2]
+
+#5
+def rotate_left_3(nums: List[int]) -> List[int]:
+  return [nums[1], nums[2], nums[0]]
+
+#6
+def reverse_3(nums: List[int]) -> List[int]:
+    return [nums[2], nums[1], nums[0]
+
+#7
+def max_end3(nums):
+  return [max(nums[0],nums[-1])]*3
+  
+#8
+def sum2(nums):
+  return sum(nums[:2])
+  
+#9
+def middle_way(a, b):
+  return [a[1], b[1]]
+  
+#10
+def make_ends(nums):
+  return [nums[0], nums[-1]]
+  
+lists - 2
+
+#1
+def count_evens(nums: List[int]) -> int:
+   count = 0
+   for n in nums:
+      if n%2 == 0:
+        count += 1
+   return count
+    
+#2
+def big_diff(nums: List[int]) -> int:
+    return max(nums) - min(nums)
+    
+ #3
+ def centered_average(nums):
+  nums.sort()
+  return sum(nums[1:-1]) / (len(nums)-2)
+  
+#4 (sum13)
+def sum13(nums):
+  if len(nums) == 0:
+    return 0
+  sum = 0
+  for n in nums:
+    if n != 13 and nums[-1] != 13:
+      sum = sum + n
+  return sum
+
+#5

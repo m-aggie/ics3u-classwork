@@ -1,4 +1,4 @@
---exercise 81
+Exercise 81
 import math
 
 def main():
@@ -14,7 +14,7 @@ def find_the_hypotenuse(side1, side2):
 if __name__ == "__main__":
     main()
     
---exercise 82
+Exercise 82
 def main():
     distance = float(input("Enter the distance travelled (km). "))
     calculate_the_taxi_fare(distance)
@@ -29,7 +29,7 @@ def calculate_the_taxi_fare(distance):
 if __name__ == "__main__":
     main()
     
---exercise 83
+Exercise 83
 def main():
     items = int(input("Enter the number of items you want to ship. "))
     shipping_calculator(items)
@@ -45,7 +45,7 @@ def shipping_calculator(items):
 if __name__ == "__main__":
     main()
     
---exercise 84
+Exercise 84
 def main():
     num1 = int(input("Enter a number. "))
     num2 = int(input("Enter another number. "))
@@ -71,7 +71,7 @@ def find_median(num1, num2, num3):
 if __name__ == "__main__":
     main()
     
---exercise 85
+Exercise 85
 def main():
     number = int(input("Enter a number. "))
     integer_to_ordinal_number(number)

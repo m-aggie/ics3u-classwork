@@ -1,0 +1,106 @@
+--exercise 81
+import math
+
+def main():
+    side1 = int(input("Enter the length for the first side. "))
+    side2 = int(input("Enter the length for the second side. "))
+    find_the_hypotenuse(side1, side2)
+
+def find_the_hypotenuse(side1, side2):
+    hypotenuse_squared = side1**2 + side2**2
+    hypotenuse = math.sqrt(hypotenuse_squared)
+    print(hypotenuse)
+
+if __name__ == "__main__":
+    main()
+    
+--exercise 82
+def main():
+    distance = float(input("Enter the distance travelled (km). "))
+    calculate_the_taxi_fare(distance)
+
+def calculate_the_taxi_fare(distance):
+    base_fare = 4.00
+    additional_fare = 0.25*(distance/.14)
+    total_fare = base_fare + additional_fare
+    total_fare = round(total_fare,2)
+    print(total_fare)
+
+if __name__ == "__main__":
+    main()
+    
+--exercise 83
+def main():
+    items = int(input("Enter the number of items you want to ship. "))
+    shipping_calculator(items)
+
+def shipping_calculator(items):
+    if items == 1:
+        print("$10.95")
+    if items > 1:
+        total = 10.95 + (2.95*(items-1))
+        total = round(total,2)
+        print(total)
+
+if __name__ == "__main__":
+    main()
+    
+--exercise 84
+def main():
+    num1 = int(input("Enter a number. "))
+    num2 = int(input("Enter another number. "))
+    num3 = int(input("Enter the last number. "))
+    find_median(num1, num2, num3)
+
+
+def find_median(num1, num2, num3):
+    if num2 > num1 and num1 > num3:
+        print(num1)
+    elif num3 > num1 and num1 > num2:
+        print(num1)
+    elif num1 > num2 and num2 > num3:
+        print(num2)
+    elif num3 > num2 and num2 > num1:
+        print(num2)
+    elif num2 > num3 and num3 > num1:
+        print(num3)
+    elif num1 > num3 and num3 > num2:
+        print(num3)
+
+
+if __name__ == "__main__":
+    main()
+    
+--exercise 85
+def main():
+    number = int(input("Enter a number. "))
+    integer_to_ordinal_number(number)
+
+def integer_to_ordinal_number(number):
+    if number == 1:
+        print("first")
+    elif number == 2:
+        print("second")
+    elif number == 3:
+        print("third")
+    elif number == 4:
+        print("fourth")
+    elif number == 5:
+        print("fifth")
+    elif number == 6:
+        print("sixth")
+    elif number == 7:
+        print("seventh")
+    elif number == 8:
+        print("eighth")
+    elif number == 9:
+        print("ninth")
+    elif number == 10:
+        print("tenth")
+    elif number == 11:
+        print("eleventh")
+    elif number == 12:
+        print("twelfth")
+
+if __name__ == "__main__":
+    main()

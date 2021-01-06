@@ -3,8 +3,10 @@ def main():
     while True:
         try:
             distance = float(input("Enter the distance travelled (km). "))
+            if distance < 1:
+                raise IndexError
             break
-        except ValueError:
+        except (ValueError,IndexError):
             print("Please enter a number. ")
 
     calculate_the_taxi_fare(distance)

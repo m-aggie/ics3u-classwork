@@ -68,64 +68,29 @@ def shipping_calculator(items):
 if __name__ == "__main__":
     main()
     
-#Exercise 84 (does not work)
+#Exercise 84 
 def main():
-    # num1 = get_valid_number("Enter the first number. ")
-    # num2 = get_valid_number("Enter the second number. ")
-    # num3 = get_valid_number("Enter the third number. ")
-    # find_median(num1, num2, num3)
+    num1 = get_valid_number("Enter the first number. ")
+    num2 = get_valid_number("Enter the second number. ")
+    num3 = get_valid_number("Enter the third number. ")
+    med = find_median(num1, num2, num3)
+    print(med)
+
+def get_valid_number(prompt):
     while True:
         try:
-            num1 = float(input("Enter the first number. "))
+            num = float(input(prompt))
             break
         except ValueError:
             print("Invalid number. ")
-    
-    while True:
-        try:
-            num2 = float(input("Enter the second number. "))
-            break
-        except ValueError:
-            print("Invalid number.")
-    
-    while True:
-        try:
-            num3 = float(input("Enter the third number. "))
-            break
-        except ValueError:
-            print("Invalid number.")
-
-    find_median(num1, num2, num3)
-
-
-# def get_valid_number(prompt):
-#     while True:
-#         try:
-#             num = float(input(prompt))
-#             break
-#         except ValueError:
-#             print("Invalid number. ")
-#     return num
+    return num
 
 def find_median(num1, num2, num3):
-    # lowest = min(num1, num2, num3)
-    # highest = max(num1, num2, num3)
-    # total = sum(num1, num2, num3)
-    # median = total - highest - lowest
-    # print(median)
-    if num2 > num1 and num1 > num3:
-        print(num1)
-    elif num3 > num1 and num1 > num2:
-        print(num1)
-    elif num1 > num2 and num2 > num3:
-        print(num2)
-    elif num3 > num2 and num2 > num1:
-        print(num2)
-    elif num2 > num3 and num3 > num1:
-        print(num3)
-    elif num1 > num3 and num3 > num2:
-        print(num3)
-
+    lowest = min(num1, num2, num3)
+    highest = max(num1, num2, num3)
+    total = sum([num1, num2, num3])
+    median = total - highest - lowest
+    return median
 
 if __name__ == "__main__":
     main()

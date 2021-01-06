@@ -13,6 +13,7 @@ def get_number(prompt):
             break
         except ValueError:
             print("Input Invalid")
+    return number
 
 def find_the_hypotenuse(side1, side2):
     hypotenuse = math.sqrt(side1**2 + side2**2)

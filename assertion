@@ -1,0 +1,23 @@
+double_char
+def test_double_char():
+    assert double_char("The") == "TThhee"
+    assert double_char("Hi-There") == "HHii--TThheerree"
+    assert double_char("word!") == "wwoorrdd!!"
+
+count_hi
+def test_count_hi():
+    assert count_hi("abc hi ho") == 1
+    assert count_hi("hihi") == 2
+    assert count_hi("") == 0
+
+cat_dog
+def test_cat_dog():
+    assert cat_dog("catdog") == True
+    assert cat_dog("catcat") == False
+    assert cat_dog("1cat1cadodog") == True
+
+count_code
+def test_count_code():
+    assert count_code("aaacodebbb") == 1
+    assert count_code("codexxcode") == 2
+    assert count_code("cozexxcope") == 2

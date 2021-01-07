@@ -1,3 +1,5 @@
+
+#Functions
 def double_char(str:str) -> str:
    '''Using a given string, it returns a different string
 
@@ -77,10 +79,9 @@ def xyz_there(str:str) -> bool:
             return True
     return False
     
-    
-    
- #Tests
- from main import double_char
+ 
+#Tests
+from main import double_char
 from main import count_hi
 from main import cat_dog
 from main import count_code

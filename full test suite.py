@@ -16,7 +16,7 @@ def find_the_hypotenuse(side1, side2):
     hypotenuse = round(hypotenuse,2)
     return hypotenuse 
     
-#Test (passed)
+#Test 
 def test_find_the_hypotenuse():
     assert find_the_hypotenuse(3,4) == 5
     assert find_the_hypotenuse(4,5) == 6.4
@@ -39,7 +39,7 @@ def calculate_the_taxi_fare(distance):
     total_fare = round(total_fare,2)
     return total_fare
     
- #Test (failed)
+ #Test 
  def test_calculate_the_taxi_fare():
     assert calculate_the_taxi_fare(2) == 7.57
     assert calculate_the_taxi_fare(10) == 21.86

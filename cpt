@@ -1,0 +1,277 @@
+def main():
+    game_state = {
+        "inventory":[],
+        "location": "room 7",
+    }
+
+    while True:
+        location = game_state["location"]
+        if location == "room 7":
+            room1(game_state)
+        elif location == "room 8":
+            room2(game_state)
+        elif location == "room 9":
+            room3(game_state)
+
+
+def room1(game_state):
+    room7_completed = False
+    cassette = False
+    print("You are in ROOM 7.")
+    print("Once you enter the room you look around and see a cassette player lying on the desk. You also see box with a 4-digit lock on the cabinet. Lastly you see another door.")
+    print()
+    while room7_completed == False:
+        print()
+        print("What do you do?")
+        print("[1] Go to the desk with the cassette player.")
+        print("[2] Go to the cabinet with the locked box")
+        print("[3] Go to the other door.")
+    
+        choice = get_valid_num("choice: ")
+
+        if choice == 1:
+            if cassette == False:
+                print()
+                print("You go to the desk with the casette player and press the play button however nothing will play.")
+                print("You see the desk has a drawer.")
+                while True:
+                    print("Do you open the drawer?")
+                    print("[1] Yes")
+                    print("[2] No")
+                    choice = get_valid_num("choice: ")
+                    if choice == 1:
+                        print()
+                        print("You open the drawer and see a cassette and a water bottle.")
+                        cassette = True
+                        game_state["inventory"].append("water bottle")
+                        break
+                    elif choice == 2:
+                        print()
+                print("You press the play button and the cassette player starts working.")
+                print("You hear 8475")
+                print()
+                while True:
+                    print("Where do you go next?")
+                    print("[1] To the cabinet.")
+                    print("[2] To the door.")
+                    choice = get_valid_num("choice: ")
+                    print()
+                    if choice == 1:
+                        print("You go to the box and there is a 4-digit lock on it.")
+                        print("Enter password")
+                        while True:
+                            password = get_valid_num("> ")
+                            if password == 8475:
+                                print("You unlocked the lock and opened the box and see a key.")
+                                game_state["inventory"].append("key")
+                                break
+                            else:
+                                print("Incorrect password.")
+                        if "key" in game_state["inventory"]:
+                            break
+                    elif choice == 2:
+                        print("The door is locked.")
+            elif "cassette" in game_state["inventory"]:
+                print("You have already been here.")
+
+        elif choice == 2:
+            print("You see beside the box with the lock.")
+            print("Enter the password")
+            while True:
+                password = get_valid_num("> ")
+                if password == 8475:
+                    print("You unlocked the lock!")
+                    print("You open the box and see a key.")
+                    game_state["inventory"].append("key")
+                    break
+                else:
+                    print()
+                    print("The lock will not unlock.")
+                    print("Do you want to try again")
+                    print("[1] Yes")
+                    print("[2] No")
+                    choice = get_valid_num("choice: ")
+                    if choice == 1:
+                        print("Try again")
+                    elif choice == 2:
+                        break
+
+        elif choice == 3:
+            if "key" not in game_state["inventory"]:
+                print("The door is locked.")
+            elif "key" in game_state["inventory"]:
+                print("You open the door and enter another room.")
+                print()
+                room7_completed = True
+                room_selection(game_state)
+        
+
+def room2(game_state):
+    room8_completed = False
+    print()
+    print("You entered to ROOM 8.")
+    print("In the room you see weird writing on the wall, a mirror, a vase, and a door.")
+    print()
+    while room8_completed == False:
+        print()
+        print("What do you do?")
+        print("[1] Go to the mirror")
+        print("[2] Go to the weird writing")
+        print("[3] Go to the vase")
+        print("[4] Go to the door")
+
+        choice = get_valid_num("choice: ")
+
+        if choice == 1:
+            print("You get the mirror.")
+            game_state["inventory"].append("mirror")
+        elif choice == 2:
+            if "mirror" not in game_state["inventory"]:
+                print("There is nothing to do here.")
+            elif "mirror" in game_state["inventory"]:
+                print("You place the mirror in front of the writing and it reads WATER.")
+        elif choice == 3:
+            if "mirror" in game_state["inventory"]:
+                print("You are at the vase and remember the water bottle you got from the drawer.")
+                print()
+            while True:
+                print("Do you pour water in the vase?")
+                print("[1] Yes")
+                print("[2] No")
+                choice = get_valid_num("choice: ")
+                if choice == 1:
+                    print("As you are pouring water in, something is starting to rise. You see that the key is taped unto a cork.")
+                    game_state["inventory"].append("key_2")
+                    break
+                elif choice == 2:
+                    break
+        elif choice == 4:
+            if "key_2" in game_state["inventory"]:
+                print("The door unlocked and there is another room.")
+                print()
+                room8_completed = True
+                room_selection(game_state)
+            else: 
+                print("Door is locked.")
+
+
+def room3(game_state):
+    room9_completed = False
+    print()
+    print("You entered ROOM 9")
+    print("In the room you see a bookshelf and many books on the ground.")
+    print("You see that some books are marked that are on the ground.")
+    print()
+    while room9_completed == False:
+        print()
+        print("What do you do?")
+        print("[1] Collect the marked books on the ground.")
+        print("[2] Go to the bookshelf")
+        choice = get_valid_num("choice: ") 
+
+        if choice == 1:
+            print("You picked up the books.")
+            game_state["inventory"].append("books")
+        elif choice == 2:
+            if "books" not in game_state["inventory"]:
+                print("You go to the bookshelf and have nothing to do.")
+            elif "books" in game_state["inventory"]:
+                print()
+                print("You arrive at the bookshelf with the books")
+                print("You realize that the bookshelf have little symbols in the empty spaces.")
+                print("You see a lightning bolt. Which book do you put down?")
+                while True:
+                    print()
+                    print("[1] Harry Potter and the Philosopher's Stone")
+                    print("[2] Alice in Wonderland")
+                    print("[3] Lord of the Rings")
+                    print("[4] Little Prince")
+                    choice = get_valid_num("choice: ")
+                    if choice == 1:
+                        print("Correct")
+                        break
+                    else:
+                        print("Incorrect")
+                print("You see a ring. Which book do you put down?")
+                while True:
+                    print()
+                    print("[1] Harry Potter and the Philosopher's Stone")
+                    print("[2] Alice in Wonderland")
+                    print("[3] Lord of the Rings")
+                    print("[4] Little Prince")
+                    choice = get_valid_num("choice: ")
+                    if choice == 3:
+                        print("Correct")
+                        break
+                    else:
+                        print("Incorrect")
+                print("You see a crown. Which book do you put down?")
+                while True:
+                    print()
+                    print("[1] Harry Potter and the Philosopher's Stone")
+                    print("[2] Alice in Wonderland")
+                    print("[3] Lord of the Rings")
+                    print("[4] Little Prince")
+                    choice = get_valid_num("choice: ")
+                    if choice == 4:
+                        print("Correct")
+                        break
+                    else:
+                        print("Incorrect")
+                print("You see a rabbit. Which book do you put down?")
+                while True:
+                    print()
+                    print("[1] Harry Potter and the Philosopher's Stone")
+                    print("[2] Alice in Wonderland")
+                    print("[3] Lord of the Rings")
+                    print("[4] Little Prince")
+                    choice = get_valid_num("choice: ")
+                    if choice == 2:
+                        print("Correct")
+                        break
+                    else:
+                        print("Incorrect")
+                print("The door opens")
+                room9_completed = True
+                room_selection(game_state)
+
+
+def get_valid_num(prompt):
+    while True:
+        try:
+            number = int(input(prompt))
+            if number <= 0:
+                raise IndexError
+            break
+        except (ValueError, IndexError):
+            print()
+            print("Invalid input. Try again")
+    return number
+
+def room_selection(game_state):
+    global room7_completed
+    global room8_completed
+
+    print("Which room do you want to go to?")
+    while True:
+        print("[1] Room 7")
+        print("[2] Room 8")
+        print("[3] Room 9")
+        choice = get_valid_num("choice: ") 
+        if choice == 1:
+            if room7_completed == True:
+                print("You already completed this room.")
+        elif choice == 2:
+            if room7_completed == False:
+                print("You need to complete room 7 first.")
+            elif room7_completed == True:
+                game_state["location"] = "room 8"
+        elif choice == 3:
+            if room7_completed == False or room8_completed == False:
+                print("You need to complete the previouse rooms first.")
+            elif room7_completed == True and room8_completed == True:
+                game_state["location"] = "room 9"
+
+
+if __name__ == "__main__":
+    main()
